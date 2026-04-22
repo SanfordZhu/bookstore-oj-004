@@ -56,6 +56,7 @@ std::vector<std::string> BookstoreSystem::parseCommand(const std::string& comman
         char c = command[i];
 
         if (c == '"') {
+            token += c;
             inQuotes = !inQuotes;
         } else if (c == ' ' && !inQuotes) {
             if (!token.empty()) {
